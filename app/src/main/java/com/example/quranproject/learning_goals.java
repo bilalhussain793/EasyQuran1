@@ -19,7 +19,8 @@ public class learning_goals extends AppCompatActivity {
         {
             @Override
             public void onClick(View view) {
-                Intent I = new Intent(getApplicationContext(),frequent_activities.class);
+                startActivity(new Intent(getApplicationContext(),frequent_activities.class));
+                finish();
             }
 
         });

@@ -19,7 +19,8 @@ public class frequent_activities extends AppCompatActivity {
         {
             @Override
             public void onClick(View view) {
-                Intent I = new Intent(getApplicationContext(),create_account.class);
+                startActivity(new Intent(getApplicationContext(),create_account.class));
+                finish();
             }
 
         });

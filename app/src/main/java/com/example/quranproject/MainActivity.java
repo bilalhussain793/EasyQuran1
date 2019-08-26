@@ -22,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View view) {
-                Intent I = new Intent(getApplicationContext(),learning_goals.class);
+                startActivity(new Intent(MainActivity.this,learning_goals.class));
+                finish();
+
             }
 
         });
@@ -30,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View view) {
-                Intent I = new Intent(getApplicationContext(),activity_login.class);
+                startActivity(new Intent(MainActivity.this,activity_login.class));
+                finish();
+
             }
 
         });

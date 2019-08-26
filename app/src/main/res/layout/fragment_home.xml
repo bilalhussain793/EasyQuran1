@@ -56,7 +56,7 @@ android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
             android:text="0 remaining minutes"
             android:textAlignment="center"
-            android:textColor="@color/defaultContentColor"
+            android:textColor="@android:color/background_dark"
             android:textSize="14dp" />
 
         <ImageView
