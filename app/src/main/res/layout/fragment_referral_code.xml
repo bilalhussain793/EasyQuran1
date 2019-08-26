@@ -18,12 +18,12 @@
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="46sp"
-        android:layout_marginBottom="60dp"
         android:textStyle="bold"
         app:fontFamily="cursive" />
 
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:orientation="vertical"
@@ -39,57 +39,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="What are your current learning goals?"
+            android:text="Enter Referral Code "
             android:textColor="@android:color/background_dark"
             android:textSize="24sp" />
 
-        <CheckBox
-            android:id="@+id/cb_improve"
-            android:layout_marginTop="20dp"
+
+
+        <EditText
+            android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Self Improvement"
-            android:padding="10dp"
-            android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/cb_study"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Study Abroad"
-            android:padding="10dp"
-            android:textSize="18sp" />
+            android:inputType="text"
+            android:textColor="#000"
+            android:hint="Enter Referral code here!"
+            android:background="#f0f0f4"
+            android:padding="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
 
-        <CheckBox
-            android:id="@+id/cb_pass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pass an Interview"
-            android:padding="10dp"
-            android:textSize="18sp" />
+             />
 
-        <CheckBox
-            android:id="@+id/cb_Excel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Excel at work/Job"
-            android:padding="10dp"
 
-            android:textSize="18sp" />
 
 
 
 
 
         <Button
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ffffff"
+            android:background="@drawable/btngreenstyle"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
 
-            android:text="Next"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold" />
+            android:gravity="center"
+            android:textAlignment="center"
+            android:padding="14dp"
+            android:text="Submit"
+            android:textSize="16dp"
+            android:textColor="#fff" />
 
 
 

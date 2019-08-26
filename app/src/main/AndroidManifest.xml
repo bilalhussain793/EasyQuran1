@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.quranproject">
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".tutor_dtl"></activity>
+        <activity android:name=".tutor_dtl" />
         <activity android:name=".create_account" />
         <activity android:name=".frequent_activities" />
         <activity android:name=".learning_goals" />
