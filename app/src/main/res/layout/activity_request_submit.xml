@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    android:weightSum="1"
+    tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="300dp"
+            android:weightSum="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Easy Quran"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="46sp"
+                android:textStyle="bold"
+                app:fontFamily="cursive" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/layout_bg"
+                android:orientation="vertical"
+
+
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit a Request"
+                    android:textAlignment="center"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="What is your reason for writing in?"
+                    android:textSize="13sp"
+
+                    android:layout_marginTop="30dp"/>
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:entries="@array/reasons"
+                    android:padding="10dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subject*"
+                    android:textSize="13sp"
+                    android:layout_marginTop="30dp"/>
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:background="#f0f0f4"
+                    android:textColor="#000"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
+                     android:layout_marginRight="20dp"
+                    android:padding="12dp"
+                      android:drawablePadding="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description*"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/etdesc"
+                    android:layout_centerVertical="true"
+                    android:gravity="left"
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="#f0f0f4"
+                    android:drawablePadding="16dp"
+                    android:inputType="textMultiLine"
+
+                    android:padding="12dp"
+                    android:textColor="#000" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Provide a detailed description as possible of why you are writing in, and what action you are looking for easy quran to take to help you."
+                    android:textSize="13sp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Attachments"
+                    android:textSize="13sp"
+                    android:layout_marginTop="30dp"
+                    />
+
+
+                <Button
+                    android:id="@+id/btn_sbs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/addbtn"
+
+                    android:drawableLeft="@drawable/attach"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="Add file or attachment"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="12dp" />
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btngreenstyle"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:padding="14dp"
+                    android:text="Submit"
+                    android:textSize="16dp"
+                    android:textColor="#fff" />
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

@@ -35,51 +35,55 @@
 
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/Article_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Enter Referral Code "
+            android:text="Mother Whale helps baby(Article Name)"
+
             android:textColor="@android:color/background_dark"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
 
-
-        <EditText
-            android:id="@+id/etUsername"
+        <TextView
+            android:id="@+id/tvLink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Link"
 
-            android:inputType="text"
-            android:textColor="#000"
-            android:hint="Enter Referral code here!"
-            android:background="#f0f0f4"
-            android:padding="12dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="14sp" />
 
-             />
-
-
-
-
-
-
-
-        <Button
-            android:id="@+id/btn_sbs"
+        <TextView
+            android:id="@+id/newe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btngreenstyle"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
+            android:text="World News"
 
-            android:gravity="center"
-            android:textAlignment="center"
-            android:padding="14dp"
-            android:text="Submit"
-            android:textSize="16dp"
-            android:textColor="#fff" />
+            android:textColor="@android:color/background_dark"
+            android:textSize="10sp" />
+
+
+        <TextView
+            android:id="@+id/newes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="Here are some tutors we picked for you:"
+
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp" />
+
+
+<ListView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</ListView>
+
+
+
+
 
 
 

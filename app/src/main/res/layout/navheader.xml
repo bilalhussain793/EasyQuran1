@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="186dp"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="top"
+    android:paddingTop="50dp"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <TextView
+        android:id="@+id/tvname1"
+        android:paddingTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Easy Quran"
+        android:textColor="@android:color/background_light"
+        android:textSize="34sp"
+        app:fontFamily="cursive" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/TvName"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tvname"
+        android:layout_height="wrap_content"
+        android:text="abc@xyz.com"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp" />
+
+
+</LinearLayout>
