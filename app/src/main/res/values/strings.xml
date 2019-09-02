@@ -2,6 +2,8 @@
     <string name="app_name"></string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
     <string-array name="country_arrays">
         <item>Male</item>
         <item>Female</item>
@@ -16,6 +18,8 @@
         <item>120 minutes per Day</item>
 
     </string-array>
+
+
     <string-array name="days_per_week">
         <item>Days per Week</item>
         <item>1 days per Week</item>
@@ -53,6 +57,6 @@
     <string name="intro">What is Easy Quran?<a href="" target="_top"></a></string>
     <string name="tutors">I,m a beginner.<a href="" target="_top"></a></string>
     <string name="beginner">Why is not Easy Quran free?<a href="" target="_top"></a></string>
-
+    <string name="web_client_id">797191628791-63v6ecn9piaqclebj69mvei2o24pkc0n.apps.googleusercontent.com</string>
 
 </resources>

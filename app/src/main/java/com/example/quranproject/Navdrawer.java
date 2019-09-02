@@ -1,23 +1,37 @@
 package com.example.quranproject;
 
 //import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
-import android.support.v4.app.FragmentManager;
+
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Navdrawer extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    TextView tv;
+    private GoogleApiClient googleApiClient;
+    private GoogleSignInOptions gso;
+    Button logoutBtn;
+    public static TextView userName, userEmail, userId;
+    public static ImageView profileImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +39,23 @@ public class Navdrawer extends AppCompatActivity  implements NavigationView.OnNa
         setContentView(R.layout.activity_navdrawer);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         drawer = findViewById(R.id.drawer_layout);
+
+
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View navView = navigationView.inflateHeaderView(R.layout.navheader);
+
+        logoutBtn = navView.findViewById(R.id.logoutBtn);
+        userName = navView.findViewById(R.id.name);
+        userEmail = navView.findViewById(R.id.email);
+        userId = navView.findViewById(R.id.userId);
+        profileImage = navView.findViewById(R.id.profileImage);
+
+
+
+
+
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -47,48 +74,38 @@ public class Navdrawer extends AppCompatActivity  implements NavigationView.OnNa
                 findViewById(R.id.bottom_navigation);
 
 
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                String menu=""+menuItem;
+                String menu = "" + menuItem;
 
-                if(menu.equals("Home")){
+                if (menu.equals("Home")) {
 
-                    HomeFragment blankFragment=new HomeFragment();
+                    HomeFragment blankFragment = new HomeFragment();
                     // create a FragmentManager
                     FragmentManager fm = getSupportFragmentManager();
                     fm.beginTransaction()
                             .replace(R.id.fragment_container, blankFragment)
                             .commit();
 
-                }if(menu.equals("Tutors")){
+                }
+                if (menu.equals("Tutors")) {
 
 
-                    TutorsFragment blankFragment=new TutorsFragment();
+                    TutorsFragment blankFragment1 = new TutorsFragment();
                     // create a FragmentManager
                     FragmentManager fm = getSupportFragmentManager();
                     fm.beginTransaction()
-                            .replace(R.id.fragment_container, blankFragment)
+                            .replace(R.id.fragment_container, blankFragment1)
                             .commit();
 
 
-                }if(menu.equals("Articles")){
+                }
+                if (menu.equals("Articles")) {
 
 
-                    Article blankFragment=new Article();
-                    // create a FragmentManager
-                    FragmentManager fm = getSupportFragmentManager();
-                    fm.beginTransaction()
-                            .replace(R.id.fragment_container, blankFragment)
-                            .commit();
-
-
-                }if(menu.equals("Accounts")){
-
-
-                    TutorsFragment blankFragment=new TutorsFragment();
+                    Article blankFragment = new Article();
                     // create a FragmentManager
                     FragmentManager fm = getSupportFragmentManager();
                     fm.beginTransaction()
@@ -96,10 +113,23 @@ public class Navdrawer extends AppCompatActivity  implements NavigationView.OnNa
                             .commit();
 
 
-                }if(menu.equals("Settings")){
+                }
+                if (menu.equals("Accounts")) {
 
 
-                    TutorsFragment blankFragment=new TutorsFragment();
+                    TutorsFragment blankFragment = new TutorsFragment();
+                    // create a FragmentManager
+                    FragmentManager fm = getSupportFragmentManager();
+                    fm.beginTransaction()
+                            .replace(R.id.fragment_container, blankFragment)
+                            .commit();
+
+
+                }
+                if (menu.equals("Settings")) {
+
+
+                    TutorsFragment blankFragment = new TutorsFragment();
                     // create a FragmentManager
                     FragmentManager fm = getSupportFragmentManager();
                     fm.beginTransaction()
@@ -114,7 +144,9 @@ public class Navdrawer extends AppCompatActivity  implements NavigationView.OnNa
             }
         });
 
+
     }
+
 
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -122,9 +154,6 @@ public class Navdrawer extends AppCompatActivity  implements NavigationView.OnNa
         } else {
             super.onBackPressed();
         }
-
-
-
     }
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -141,10 +170,7 @@ public class Navdrawer extends AppCompatActivity  implements NavigationView.OnNa
                         new subscribe()).commit();
                 break;
 
-//            case R.id.nav_message:
-////                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-////                        new Product_main()).commit();
-////                break;
+
             case R.id.nav_mins:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new free_mins()).commit();
@@ -175,21 +201,20 @@ public class Navdrawer extends AppCompatActivity  implements NavigationView.OnNa
                 break;
 
 
-
-
-
             case R.id.nav_logout:
                 Intent i = new Intent(Navdrawer.this, MainActivity.class);
+                FirebaseAuth.getInstance().signOut();
                 startActivity(i);
                 finish();
-                Toast.makeText(Navdrawer.this,"You have Successfully Logged Out!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Navdrawer.this, "You have Successfully Logged Out!", Toast.LENGTH_SHORT).show();
 
                 break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
 
-
-        return true ;
+        return true;
     }
+
+
 }

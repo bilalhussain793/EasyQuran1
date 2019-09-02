@@ -1,10 +1,12 @@
 package com.example.quranproject;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 
 public class activity_login extends AppCompatActivity {
     Button btn_next;
@@ -20,11 +22,24 @@ public class activity_login extends AppCompatActivity {
         {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Navdrawer.class));
+                startActivity(new Intent(getApplicationContext(),google.class));
                 finish();
             }
 
         });
+    }
+    private void handleSignInResult(GoogleSignInResult result) {
+        if (result.isSuccess()) {
+            startActivity(new Intent(activity_login.this,Navdrawer.class));
+
+        } else {
+            gotoMainActivity();
+        }
+    }
+
+    private void gotoMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

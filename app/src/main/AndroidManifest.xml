@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.quranproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,27 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_login"
-            android:theme="@style/AppTheme.NoActionBar" ></activity>
-        <activity android:name=".purchase"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".request_submit"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".article_dtl"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".tutor_dtl"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".create_account"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".frequent_activities"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".learning_goals"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".reset_password_activity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Navdrawer"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".MainActivity" android:theme="@style/AppTheme.NoActionBar" >
+        <activity android:name=".google"></activity>
+        <activity
+            android:name=".activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".purchase"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".request_submit"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".article_dtl"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tutor_dtl"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".create_account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".reset_password_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Navdrawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

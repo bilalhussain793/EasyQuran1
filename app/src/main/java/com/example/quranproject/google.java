@@ -1,18 +1,13 @@
 package com.example.quranproject;
-
-
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -24,31 +19,27 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
-
-
-public class HomeFragment extends Fragment implements GoogleApiClient.OnConnectionFailedListener {
+public class google extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     Button logoutBtn;
     TextView userName, userEmail, userId;
     ImageView profileImage;
     private GoogleApiClient googleApiClient;
     private GoogleSignInOptions gso;
 
-    public HomeFragment() {
-        // Required empty public constructor
-    }
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-       View  v = inflater.inflate(R.layout.fragment_home, container,false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_google);
+        logoutBtn = findViewById(R.id.logoutBtn);
+        userName = findViewById(R.id.name);
+        userEmail = findViewById(R.id.email);
+        userId = findViewById(R.id.userId);
+        profileImage = findViewById(R.id.profileImage);
 
-        logoutBtn = v.findViewById(R.id.logoutBtn);
-        userName = v.findViewById(R.id.name);
-        userEmail =v.findViewById(R.id.email);
-        userId = v.findViewById(R.id.userId);
-        profileImage = v.findViewById(R.id.profileImage);
+
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        googleApiClient = new GoogleApiClient.Builder(getActivity()).enableAutoManage(getActivity(), this )
+        googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,17 +52,15 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
                                 if (status.isSuccess()) {
                                     gotoMainActivity();
                                 } else {
-                                    Toast.makeText(getContext(), "Session not close", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Session not close", Toast.LENGTH_LONG).show();
                                 }
                             }
                         });
-            }
-        });
-
-        return v;
+            }});
     }
+
     @Override
-    public void onStart() {
+    protected void onStart() {
         super.onStart();
         OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(googleApiClient);
         if (opr.isDone()) {
@@ -91,18 +80,12 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
         if (result.isSuccess()) {
             GoogleSignInAccount account = result.getSignInAccount();
             userName.setText(account.getDisplayName());
-            DataLog.username=account.getDisplayName();
-
-            Navdrawer.userName.setText(account.getDisplayName());
-
             userEmail.setText(account.getEmail());
-            Navdrawer.userEmail.setText(account.getEmail());
-            DataLog.email=account.getEmail();
             userId.setText(account.getId());
             try {
-                Glide.with(this).load(account.getPhotoUrl()).into(Navdrawer.profileImage);
+                Glide.with(this).load(account.getPhotoUrl()).into(profileImage);
             } catch (NullPointerException e) {
-                Toast.makeText(getContext(), "image not found", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "image not found", Toast.LENGTH_LONG).show();
             }
         } else {
             gotoMainActivity();
@@ -110,11 +93,9 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
     }
 
     private void gotoMainActivity() {
-        Intent intent = new Intent(getActivity(), MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
-    }
-}
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) { }}
