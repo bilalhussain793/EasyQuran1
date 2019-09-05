@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-
 public class activity_login extends AppCompatActivity {
     Button btn_next;
 
@@ -28,17 +26,10 @@ public class activity_login extends AppCompatActivity {
 
         });
     }
-    private void handleSignInResult(GoogleSignInResult result) {
-        if (result.isSuccess()) {
-            startActivity(new Intent(activity_login.this,Navdrawer.class));
 
-        } else {
-            gotoMainActivity();
-        }
-    }
 
     private void gotoMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Navdrawer.class);
         startActivity(intent);
     }
 

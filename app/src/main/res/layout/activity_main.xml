@@ -9,6 +9,12 @@
 
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/eq_logo"
+        android:layout_marginTop="20dp"/>
     <ScrollView
         android:layout_width="match_parent"
         android:background="@color/colorPrimaryDark"
@@ -26,7 +32,6 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:text="Easy Quran"
                 android:textAlignment="center"
                 android:textAllCaps="false"
@@ -35,24 +40,32 @@
                 android:textStyle="bold"
                 app:fontFamily="cursive" />
 
-            <Button
-                android:id="@+id/sign_in_button"
-                android:layout_width="match_parent"
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginRight="20dp"
-                android:background="#CC3333"
-                android:drawableLeft="@drawable/googlep"
-                android:paddingLeft="30dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginRight="20dp">
+                <Button
+                    android:id="@+id/sign_in_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/googlep"
+                    android:paddingLeft="10dp"
+                    android:text="    Login with Google     "
+                    android:textAllCaps="false"
+                    android:textColor="#B40000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </android.support.v7.widget.CardView>
 
-                android:text="Log in with Google"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+
 
             <!--<com.google.android.gms.common.SignInButton-->
                 <!--android:layout_width="match_parent"-->
@@ -65,28 +78,33 @@
                 <!--android:layout_marginBottom="20dp">-->
 
             <!--</com.google.android.gms.common.SignInButton>-->
-
-            <Button
-
-                android:id="@+id/fb_btn"
-                android:layout_width="match_parent"
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp">
+                <Button
 
-                android:background="#3B5998"
-                android:drawableLeft="@drawable/facebook"
-                android:paddingLeft="30dp"
+                    android:id="@+id/fb_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/facebook"
+                    android:paddingLeft="10dp"
+                    android:background="#ffffff"
+                    android:text="  Login with Facebook  "
+                    android:textAllCaps="false"
+                    android:textColor="#112669"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
+            </android.support.v7.widget.CardView>
 
-                android:text="Log in with Facebook"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
             <Button
 

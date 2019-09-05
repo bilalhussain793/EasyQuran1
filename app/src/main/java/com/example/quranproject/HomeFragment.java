@@ -1,6 +1,5 @@
 package com.example.quranproject;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -48,8 +47,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
         profileImage = v.findViewById(R.id.profileImage);
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        googleApiClient = new GoogleApiClient.Builder(getActivity()).enableAutoManage(getActivity(), this )
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
+        googleApiClient = new GoogleApiClient.Builder(getActivity()).enableAutoManage(getActivity(), this ).addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
